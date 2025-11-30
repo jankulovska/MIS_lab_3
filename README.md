@@ -1,4 +1,6 @@
-# laboratory_exercise_2
+# laboratory_exercise_3
+
+Video link: https://drive.google.com/file/d/196K-NNh8GPHdNn_5TTHbZzAVm_Ss5uDg/view?usp=drive_link
 
 A new Flutter project.
 
