@@ -37,7 +37,7 @@ class MealDetailScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: meal.ingredients.entries.map((e) => Text('- \${e.key} : \${e.value}')).toList(),
+                children: meal.ingredients.entries.map((e) => Text('- ${e.key} : ${e.value}')).toList(),
               ),
             ),
             SizedBox(height: 12),

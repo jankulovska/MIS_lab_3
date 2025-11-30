@@ -49,7 +49,13 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
               icon: Icon(Icons.shuffle),
               tooltip: 'Random recipe',
               onPressed: _openRandom,
-            )
+            ),
+            IconButton(
+              icon: const Icon(Icons.favorite),
+              onPressed: () {
+                Navigator.pushNamed(context, '/favorites');
+              },
+            ),
           ],
         ),
         body: FutureBuilder<List<CategoryModel>>(

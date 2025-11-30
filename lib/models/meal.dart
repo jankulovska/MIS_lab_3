@@ -38,11 +38,13 @@ class MealDetail {
   factory MealDetail.fromJson(Map<String, dynamic> json) {
     Map<String, String> ingr = {};
     for (int i = 1; i <= 20; i++) {
-      final ingKey = 'strIngredient\$i';
-      final measureKey = 'strMeasure\$i';
+      final ingKey = 'strIngredient$i'; // <-- поправено, без backslash
+      final measureKey = 'strMeasure$i';
+
       final ing = (json[ingKey] ?? '').toString().trim();
       final measure = (json[measureKey] ?? '').toString().trim();
-      if (ing.isNotEmpty) {
+
+      if (ing.isNotEmpty && ing != "null") {
         ingr[ing] = measure;
       }
     }

@@ -69,14 +69,22 @@ class _MealsScreenState extends State<MealsScreen> {
               Expanded(
                 child: GridView.builder(
                   padding: EdgeInsets.all(8),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 0.8, crossAxisSpacing: 8, mainAxisSpacing: 8),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 8,
+                    mainAxisSpacing: 8,
+                    childAspectRatio: 0.62,
+                  ),
                   itemCount: _filtered.length,
                   itemBuilder: (ctx, i) {
                     final meal = _filtered[i];
                     return GestureDetector(
                       onTap: () async {
                         final detail = await ApiService.lookupMeal(meal.idMeal);
-                        Navigator.of(context).pushNamed(MealDetailScreen.routeName, arguments: detail);
+                        Navigator.of(context).pushNamed(
+                          MealDetailScreen.routeName,
+                          arguments: detail,
+                        );
                       },
                       child: MealCard(meal: meal),
                     );
